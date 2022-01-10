@@ -113,14 +113,14 @@ int main()
     int x = 1, y = 2;
 
     function<int(int, int)> f = sum;
-    cout << f(x, 3) << endl;
+    cout << f(x, 2) << endl; // 3
 
     function<void(int&)> h = inc;
-    h(x);
-    cout << x << endl;
+    h(y);
+    cout << y << endl; // 3
 
     function<double()> g = [x, &y]() { return x * y; };
-    cout << g() << endl;
+    cout << g() << endl; // 3
 
 
     return 0;
